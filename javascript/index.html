@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="bai-1">
+    <p id="hello1"></p>
+</div>
+<div class="bai-2">
+    <button onclick="hello()">hello</button>
+</div>
+<div class="bai-3">
+    Tinh toan
+    nhap a
+    <br>
+    <input type="text" id="a" style="width: 50px">
+    <br>
+    nhap b
+    <br>
+    <input type="text" id="b" style="width: 50px">
+    <br>
+    <button onclick="sumAB()">SUM</button>
+</div>
+<div class="bai-4">
+    Tinh toan
+    <br>
+    nhap a
+    <br>
+    <input type="text" id="c" style="width: 50px">
+    <br>
+    nhap b
+    <br>
+    <input type="text" id="d" style="width: 50px">
+    <br>
+    <button onclick="sumCD()">SUM</button>
+    <p id="hienthi"></p>
+</div>
+<div class="bai-5">
+    nhap vao o di
+    <input type="text" id="e" style="width: 50px">
+    <br>
+    <button onclick="hienthi()">submit</button>
+    <p id="hienthi2"></p>
+
+</div>
+<div class="bai-6">
+    nhap vao o di
+    <input type="text" id="f" style="width: 50px">
+    <br>
+    <button onclick="hienthi2()">submit</button>
+    <p id="hienthi3"></p>
+</div>
+<div class="bai-7">
+    Tinh toan
+    nhap a
+    <br>
+    <input type="text" id="g" style="width: 50px">
+    <br>
+    nhap b
+    <br>
+    <input type="text" id="h" style="width: 50px">
+    <br>
+    <button onclick="tichAB()">TICH</button>
+    <p id="hienthi4"></p>
+</div>
+<script>
+
+    alert("Hello");
+    const hello1 = document.getElementById("hello1").innerHTML = "Hello"
+
+    function hello() {
+        alert("hello")
+    }
+
+    function sumAB() {
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+        const a1 = Number(a)
+        const b1 = Number(b)
+        const sum = a1 + b1
+        alert(sum)
+    }
+
+    function sumCD() {
+        const c = document.getElementById("c").value;
+        const d = document.getElementById("d").value;
+        const c1 = Number(c)
+        const d1 = Number(d)
+        const sum2 = c1 + d1
+        document.getElementById("hienthi").innerHTML = sum2.toString()
+    }
+
+    function hienthi() {
+        const e = document.getElementById("e").value
+        document.getElementById("hienthi2").innerHTML = e.toString()
+    }
+    function hienthi2() {
+        const f = document.getElementById("f").value
+        const f1 = f * 10;
+        document.getElementById("hienthi3").innerHTML = f1.toString()
+    }
+    function tichAB() {
+        const g = document.getElementById("g").value;
+        const h = document.getElementById("h").value;
+        const g1 = Number(g)
+        const h1 = Number(h)
+        const sum3 = g1 * h1
+        document.getElementById("hienthi4").innerHTML = sum3.toString()
+    }
+</script>
+</body>
+</html>
