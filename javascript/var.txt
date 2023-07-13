@@ -1,0 +1,15 @@
+--- Các Biến ---
+const, var, let
+
+--- toán tử ---
++ toán tử gán: =
++ toán tử so sánh: == và ===
+--- Các kiểu dữ liệu ---
+Number
+Boolean
+String
+Null
+Undefined
+Object
+Array
+NaN
