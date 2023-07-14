@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="bai-1">
+    diemHoa
+    <br>
+    <input type="text" id="diemHoa">
+    <br>
+    diemVatLy
+    <br>
+    <input type="text" id="diemVatLy">
+    <br>
+    diemSinhHoc
+    <br>
+    <input type="text" id="diemSinhHoc">
+    <br>
+    <button onclick="tinhTongDiem()">TB</button>
+    <p id="tongDiem"></p>
+</div>
+
+<div class="bai-2">
+    Chuyen Doi Nhiet Do
+    C => F
+    <br>
+    <input type="text" id="nhietDo">
+    <br>
+    <button onclick="chuyenDoiNhietDo()">CDN</button>
+    <p id="chuyenDoiNhietDo"></p>
+
+
+</div>
+<div class="bai-3">
+    Tinh Chu Vi Hinh Tron
+    <br>
+    nhap ban kinh
+    <br>
+    <input type="text" id="banKinh">
+    <button onclick="tinhChuVi()">Chuyen</button>
+    <p id="chuyen"></p>
+</div>
+<div class="bai-4">
+    Tinh Dien Tich Hinh Tron
+    <br>
+    nhap ban kinh
+    <br>
+    <input type="text" id="bankinh2">
+    <button onclick="tinhDienTich()">Chuyen</button>
+    <p id="chuyen2"></p>
+</div>
+<script>
+    function tinhTongDiem() {
+        const diemHoa = +document.getElementById("diemHoa").value;
+        const diemVatLy = +document.getElementById("diemVatLy").value;
+        const diemSinhHoc = +document.getElementById("diemSinhHoc").value
+        const tongDiem = (diemHoa + diemVatLy + diemSinhHoc) / 3
+        document.getElementById("tongDiem").innerHTML = tongDiem.toString();
+    }
+
+    function chuyenDoiNhietDo() {
+        const nhietDo = +document.getElementById("nhietDo").value;
+        const chuyenDoiNhietDo = nhietDo * 9 / 5 + 32
+        document.getElementById("chuyenDoiNhietDo").innerHTML = chuyenDoiNhietDo.toString();
+    }
+
+    function tinhChuVi() {
+        const PI = 3.14
+        const banKinh = +document.getElementById("banKinh").value;
+        const chuyen = (banKinh * 2) * PI
+        document.getElementById("chuyen").innerHTML = chuyen.toString();
+    }
+    function tinhDienTich() {
+        const PI = 3.14
+        const banKinh = +document.getElementById("bankinh2").value;
+        const dientich = Math.pow(banKinh, 2) * PI
+        document.getElementById("chuyen2").innerHTML = dientich.toString();
+    }
+
+</script>
+</body>
+</html>
