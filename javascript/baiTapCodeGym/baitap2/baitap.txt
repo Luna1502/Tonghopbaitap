@@ -1,0 +1,6 @@
+bai2: 2 * ( 3 + "5") - "2" + 20 / "5" + ("1" + 2 + 6)
+<=> 2 * "35" - "2" + 4 + "126" /* số 3 + chuỗi 5 => chuỗi 35, số 20 / "5" chuỗi sẽ được ép về kiểu sổ vì chuỗi không thể chia được cho số, ("1" + 2 + 6) thì chuỗi "1" + 2 = "12" + số 6 = "126"
+<=> 70 - "2" + 4 + "126" /* số 2 * "35" chuỗi sẽ được ép về kiểu sổ vì chuỗi không thể nhân được cho số nên 2* "35" = 70
+<=> 68 + 4 + "126" / số 70 - "2" chuỗi sẽ được ép về kiểu sổ vì chuỗi không thể trừ được cho số nên 70 - "2" sẽ bằng 68
+<=> 72 + "126" 
+<=> "72126" /* số 72 + "126" chuỗi sử dụng toán tử + để nối chuỗi với số 
