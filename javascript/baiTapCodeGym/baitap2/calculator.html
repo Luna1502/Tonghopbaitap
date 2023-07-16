@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .form-1{
+           width: 200px;
+           height: 200px;
+           background-color: gray;
+           position: absolute;
+           top: 30%;
+           left: 50%;
+           text-align: center;
+       }
+       input[type="text"]{
+           border-radius: 100px;
+
+       }
+       button[onclick]{
+           border-radius: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div class="form-1">
+        <input type="text" placeholder="Nhap so vao" id="a">
+        <br>
+        <br>
+        <input type="text" placeholder="Nhap so vao" id="b">
+        <br>
+        <p>Ket Qua</p>
+        <p id="result"></p>
+        <br>
+        <button onclick="button('+')">+</button>
+        <button onclick="button('-')">-</button>
+        <button onclick="button('*')">*</button>
+        <button onclick="button('/')">/</button>
+
+    </div>
+</body>
+<script>
+
+    function button(params) {
+        const inputFirst = +document.getElementById("a").value;
+        const inputSeconds = +document.getElementById("b").value;
+        if (params === '+'){
+            let a = inputFirst + inputSeconds
+            document.getElementById("result").innerHTML = a.toString()
+        } else if(params === '-'){
+            let b = inputFirst - inputSeconds
+            document.getElementById("result").innerHTML = b.toString()
+        } else if(params === '*'){
+            let c = inputFirst * inputSeconds
+            document.getElementById("result").innerHTML = c.toString()
+        } else if(params === '/'){
+            let d = inputFirst / inputSeconds
+            document.getElementById("result").innerHTML = d.toString()
+        }
+
+    }
+</script>
+</html>
