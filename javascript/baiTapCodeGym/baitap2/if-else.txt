@@ -1,0 +1,52 @@
+-- Điều kiện --
+Cấu trúc điều kiện là một phần của lập trình được sử dụng để thực hiện các hành động khác nhau dựa trên một điều kiện được đưa ra: 
+Nếu điều kiện được đưa ra là đúng, code sẽ được thực thi
+Nếu điều kiện là sai, một nhánh khác hoặc không có hành động nào sẽ được thực thi.
+
+1. 	Cấu trúc if
+if(điều kiện true or false){
+	code được thực thi
+}
+
+#Demo
+
+let a = 6
+if ( a == 6 ){
+	console.log("a = 6")
+}
+
+2.       if-else
+if(điều kiện true or false){
+	code được thực thi nếu điều kiện đúng
+} else {
+	code được thực thi nếu điều kiện sai
+}
+
+#Demo
+let a = 6
+if ( a != 6 ){
+	console.log("a = 6")
+} else {
+	console.log("a khac 6")
+}
+
+3. 	If-else-if
+if(điều kiện 1 true or false){
+	code được thực thi nếu điều kiện 1 đúng
+} else if (điều kiện 2 true or false){
+	code được thực thi nếu điều kiện 2 đúng hoặc sai
+} else {
+	code sẽ được thực thi nếu cả 2 điều kiện trên sai
+}
+
+#Demo
+
+let a = 10
+if (a == 6) {
+    console.log("a = 6");
+} else if (a <= 6) {
+    console.log("a < 6");
+} else {
+    console.log("a > 6");
+}
+
