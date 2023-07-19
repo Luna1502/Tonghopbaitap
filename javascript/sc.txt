@@ -1,0 +1,37 @@
+----Switch-Case----
+là một cấu trúc điều khiển trong JavaScript, cho phép bạn thực hiện một loạt các hành động khác nhau dựa trên giá trị của một biểu thức.
+- Cú pháp của Switch-Case:
+switch (biểu_thức) {
+  case case1:
+    // Các hành động khi biểu_thức có giá trị bằng case1
+    break;
+  case case2
+    // Các hành động khi biểu_thức có giá trị bằng case2
+    break;
+  // Có thể thêm nhiều case khác
+  default:
+    // default là hành động khi không có bất kì case nào phù hợp với giá trị được nêu lên
+}
+
+#Demo
+let a = Math.rounnd(Math.random())
+switch (a){
+  case: 1
+    // Các hành động khi biểu_thức có giá trị bằng 1
+	console.log(`giá trị của case 1 là: ${a}`)
+    break;
+  casc: 2
+    // Các hành động khi biểu_thức có giá trị bằng 2
+	onsole.log(`giá trị của case 2 : ${a}`)
+    break;
+  // Có thể thêm nhiều case khác vô hạn vì số là random
+  default:
+    // default là hành động khi không có bất kì case nào phù hợp với giá trị được nêu lên
+	console.log(`error không có giá trị nào được in ra vì lỗi`)
+}
+
+---Toán Tử Ba Ngôi---
+Toán tử 3 ngôi là 1 dạng rút gọn của if else nó có thể trông khá rối nếu viết nhiều
+-Cấu trúc-
++ 	Điều kiện ? thực thi 1 : thực thi 2
+	cũng như if else thì điền kiện true thì thực thi 1 sẽ được triển khai còn false thì thực thi 2 sẽ được triển khai
