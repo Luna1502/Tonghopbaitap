@@ -1,0 +1,85 @@
+				--- Loop ---
+1, Khái niệm lặp
+-Trong lập trình, lặp là quá trình thực hiện một các câu lệnh nhiều lần cho đến khi điều kiện dừng được đáp ứng.
+-Có nhiều loại lặp trong lập trình, nhưng chúng ta sẽ tập trung vào vòng lặp for, while và vòng lặp for lồng nhau.
+2, Vòng lặp for:
+-Vòng lặp for thường được sử dụng khi bạn đã biết trước số lần lặp lại
+
+-Cú pháp:
+for(giá trị khởi tạo; điều kiện lặp;bước nhảy của vòng lặp){
+	// khối lệnh lặp
+}
+
+#Demo
+
+for (let i = 0; i < 5; i++) {
+  console.log("Giá trị của i:", i);
+}
+
+#Demo for sử dụng break: khi gặp 1 điều kiện bất kì có thể dùng break để dừng vòng lặp
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    console.log("Kết thúc vòng lặp khi i = 5");
+    break;
+  }
+  console.log("Giá trị của i:", i);
+}
+
+#Demo for sử dụng continue: khi muốn bỏ qua 1 phần của vòng lặp với lần lặp sau nó
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    console.log("Bỏ qua khi i = 5 và tiếp tục vòng lặp");
+    continue;
+  }
+  console.log("Giá trị của i:", i);
+}
+
+# for lồng nhau
+
+for (khởi tạo_ngoài; điều kiện_ngoài; bước_nhảy_ngoài) {
+  // Các câu lệnh thực hiện trong vòng lặp ngoài
+  for (khởi_tạo_trong; điều_kiện_trong; bước_nhảy_trong) {
+    // Các câu lệnh thực hiện trong vòng lặp trong
+  }
+}
+
+#Demo for lồng for 
+
+for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 2; j++) {
+    console.log(`Vòng lặp ngoài i: ${i}, Vòng lặp trong j: ${j}`);
+  }
+}
+
+# vòng lặp while: kiểm tra điều kiện trước khi lặp
+
+while( điều kiện ) {
+// lệnh được thực hiện trong vòng lặp
+}
+
+#Demo while:
+
+let count = 0;
+
+while (count < 5) {
+  console.log("Giá trị của count:", count);
+  count++;
+}
+
+# Do-While : kiểm tra điều kiện sau khi thực hiện vòng lặp ít nhất 1 lần
+
+do {
+  // Các câu lệnh thực hiện trong vòng lặp
+} while (điều kiện);
+
+#Demo
+
+let count = 0;
+
+do {
+  console.log("Giá trị của count:", count);
+  count++;
+} while (count < 5);
+
