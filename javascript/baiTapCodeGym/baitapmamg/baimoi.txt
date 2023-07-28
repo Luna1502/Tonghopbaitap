@@ -1,0 +1,64 @@
+---- Mảng 2 chiều ----
+
+- Mảng 2 chiều là một loại cấu trúc dữ liệu trong lập trình, còn được gọi là mảng đa chiều
+- Mảng 2 chiều bao gồm một tập hợp các phần tử, trong đó mỗi phần tử có thể là một mảng con, tạo thành một lưới 2D.
+- Mảng 2 chiều thường được sử dụng để lưu trữ dữ liệu dạng bảng có hàng và cột.
+
+#Demo
+
+// Ví dụ mảng 2 chiều 3x3
+const array2D = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+for (let i = 0; i < array2D.length; i++) {
+  for (let j = 0; j < array2D[i].length; j++) {
+    const value = array2D[i][j];
+  }
+}
+
+
+//baitap
+function timMax(array2D) {
+  let max = array2D[0][0];
+
+  for (let i = 0; i < array2D.length; i++) {
+    for (let j = 0; j < array2D[i].length; j++) {
+      const value = array2D[i][j];
+      if (value > max) {
+        max = value;
+      }
+    }
+  }
+
+  return max;
+}
+
+function timMin(array2D) {
+  let min = array2D[0][0];
+
+  for (let i = 0; i < array2D.length; i++) {
+    for (let j = 0; j < array2D[i].length; j++) {
+      const value = array2D[i][j];
+      if (value < min) {
+        min = value;
+      }
+    }
+  }
+
+  return min;
+}
+
+const array2D = [
+  [3, 8, 12],
+  [4, 5, 6],
+  [7, 2, 9]
+];
+
+const maxNumber = timMax(array2D);
+const minNumber = timMin(array2D);
+
+console.log("Số lớn nhất trong mảng 2 chiều:", maxNumber);
+console.log("Số nhỏ nhất trong mảng 2 chiều:", minNumber);
