@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sinh viên</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-top: 5px;
+        }
+
+        .editRow {
+            background-color: #ffffcc;
+        }
+    </style>
+</head>
+<body>
+<h2>Quản lí sinh viên</h2>
+<input type="text" id="tenSinhVien" placeholder="Nhập tên sinh viên">
+<button onclick="themSinhVien()">Lưu</button>
+<br><br>
+<table>
+    <tr>
+        <th>Tên sinh viên</th>
+        <th>Hành động</th>
+    </tr>
+    <tbody id="danhSachSinhVien">
+    </tbody>
+</table>
+
+<script>
+    function themSinhVien() {
+        var tenSinhVien = document.getElementById('tenSinhVien').value;
+
+        if (tenSinhVien.trim() === '') {
+            alert('Vui lòng nhập tên sinh viên.');
+            return;
+        }
+
+        var bangSinhVien = document.getElementById('danhSachSinhVien');
+        var hangMoi = bangSinhVien.insertRow();
+        var oTenSinhVien = hangMoi.insertCell(0);
+        var oHanhDong = hangMoi.insertCell(1);
+
+        oTenSinhVien.innerHTML = tenSinhVien;
+        oHanhDong.innerHTML = '<button onclick="suaSinhVien(this)">Sửa</button>';
+        document.getElementById('tenSinhVien').value = '';
+    }
+
+    function suaSinhVien(nutSua) {
+        const hang = nutSua.parentNode.parentNode;
+
+        if (hang.classList.contains('editRow')) {
+            let oTenSinhVien = hang.cells[0];
+            let tenSinhVien = oTenSinhVien.firstChild.value;
+            oTenSinhVien.innerHTML = tenSinhVien;
+            nutSua.innerText = 'Sửa';
+        } else {
+            let oTenSinhVien = hang.cells[0];
+            let tenSinhVien = oTenSinhVien.innerHTML;
+            oTenSinhVien.innerHTML = '<input type="text" value="' + tenSinhVien + '">';
+            nutSua.innerText = 'Lưu';
+        }
+
+        hang.classList.toggle('editRow');
+    }
+</script>
+</body>
+</html>
