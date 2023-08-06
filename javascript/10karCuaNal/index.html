@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #hinhTron {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: darkcyan;
+            transition: left 0.1s, top 0.1s;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+<div id="hinhTron"></div>
+<script>
+    class HinhTron {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.tocDo = 100
+        }
+
+        veLaiHinhTron() {
+            let hinhTron = document.getElementById("hinhTron")
+            hinhTron.style.top = this.x + 'px'
+            hinhTron.style.left = this.y + 'px'
+
+        }
+
+        nutLen() {
+            this.x -= this.tocDo;
+            this.veLaiHinhTron()
+        }
+
+        nutXuong() {
+            this.x += this.tocDo;
+            this.veLaiHinhTron()
+        }
+
+        nutTrai() {
+            this.y += this.tocDo
+            this.veLaiHinhTron()
+        }
+
+        nutPhai() {
+            this.y -= this.tocDo
+            this.veLaiHinhTron()
+        }
+
+    }
+
+    let circle = new HinhTron(10, 10)
+
+
+    function button() {
+
+        document.addEventListener("keydown", function (event) {
+            console.log(event.key)
+            switch (event.key) {
+                case "ArrowUp":
+                    circle.nutLen()
+                    break;
+                case "ArrowDown":
+                    circle.nutXuong()
+                    break;
+                case "ArrowRight":
+                    circle.nutTrai()
+                    break;
+                case "ArrowLeft":
+                    circle.nutPhai()
+                    break;
+            }
+        })
+
+        function handleAnimation() {
+            requestAnimationFrame(handleAnimation)
+        }
+
+        handleAnimation()
+    }
+
+    button()
+
+</script>
+</body>
+</html>
