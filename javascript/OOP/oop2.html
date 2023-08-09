@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tương Tác Công Tắc và Bóng Đèn</title>
+    <style>
+        .den {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: gray;
+            margin-bottom: 10px;
+        }
+        .bat {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<button id="nutCongTac">Bật/Tắt</button>
+<div class="den" id="bongDen"></div>
+
+<script>
+    class BongDen {
+        constructor() {
+            this.batTat = false;
+        }
+
+        bat() {
+            this.batTat = true;
+            this.capNhatBongDen();
+        }
+
+        tat() {
+            this.batTat = false;
+            this.capNhatBongDen();
+        }
+
+        capNhatBongDen() {
+            const bongDenElement = document.getElementById('bongDen');
+            if (this.batTat) {
+                bongDenElement.classList.add('bat');
+            } else {
+                bongDenElement.classList.remove('bat');
+            }
+        }
+    }
+
+    class CongTac {
+        constructor(bongDen) {
+            this.bongDen = bongDen;
+            this.batTat = false;
+            this.nutCongTac = document.getElementById('nutCongTac');
+            this.nutCongTac.addEventListener('click', this.chuyenDoi.bind(this));
+        }
+
+        chuyenDoi() {
+            this.batTat = !this.batTat;
+            if (this.batTat) {
+                this.bongDen.bat();
+            } else {
+                this.bongDen.tat();
+            }
+        }
+    }
+
+    const den = new BongDen();
+    const congTac = new CongTac(den);
+</script>
+</body>
+</html>
